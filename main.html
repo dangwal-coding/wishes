@@ -760,14 +760,14 @@
   <div class="magic-container">
     <header class="header">
       <h1 class="main-heading">Happy Birthday Dibba ! 💖</h1>
-      <p class="subtitle">Divya, You Make The World Sparkle ✨</p>
+      <p class="subtitle"> You Make The World Sparkle ✨</p>
     </header>
 
     <section class="profile-section">
       <div class="profile-frame">
         <img
           src="d2.jpg"
-          alt="Queen Shobhita" class="profile-img">
+          alt="Queen" class="profile-img">
       </div>
     </section>
 
@@ -969,6 +969,17 @@
         }, 300 * i); // stagger by 0.3s each
       });
     });
+    // Music auto-play on page load if coming from NEXT button
+window.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('playMusic') === 'yes') {
+        let audio = document.createElement('audio');
+        audio.src = './hap.mp3';
+        audio.autoplay = true;
+        audio.loop = false;
+        audio.style.display = 'none';
+        document.body.appendChild(audio);
+    }
+});
 
   </script>
 

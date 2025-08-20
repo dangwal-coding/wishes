@@ -809,7 +809,7 @@
 
     <div class="container">
         <div class="header">
-            <h1 class="font-changer">Happy Birthday Divya! 🎉</h1>
+            <h1 class="font-changer">Happy Birthday ! 🎉</h1>
             <p class="greeting">Hey funny girl ! 🌸</p>
         </div>
 
@@ -844,7 +844,7 @@
         </div>
 
         <div class="footer">
-            <p>Made with 💝 by Kullu</p>
+            <p>Made with 💝 by Heart</p>
             <a href="gallery.html">
                 <p onclick="location.reload()" style="cursor: pointer; color:white; 
                 background-color: #8b008b; border-radius: 2rem; font-size: 3rem;">Click here to relive the magic! ✨</p>
@@ -1032,7 +1032,19 @@
                 heart.remove();
             }, 1000);
         });
-
+// Music auto-play on page load if coming from NEXT button
+window.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('playMusic') === 'yes') {
+        let audio = document.createElement('audio');
+        audio.src = './hap.mp3';
+        audio.autoplay = true;
+        audio.loop = false; // remove if you don't want looping
+        audio.style.display = 'none';
+        document.body.appendChild(audio);
+        // Optionally, clear the flag if you want music only once:
+        // localStorage.removeItem('playMusic');
+    }
+});
     </script>
 
 
