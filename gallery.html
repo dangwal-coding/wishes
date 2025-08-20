@@ -146,6 +146,29 @@
                 height: auto;
             }
         }
+        .back-btn {
+            display: inline-block;
+            margin: 2.5rem auto 0 auto;
+            padding: 0.8rem 2.2rem;
+            background: linear-gradient(90deg, #ff4e8e 0%, #fbc2eb 100%);
+            color: #fff;
+            font-family: 'Segoe Script', cursive;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 2rem;
+            box-shadow: 0 2px 12px rgba(255, 78, 142, 0.12);
+            text-decoration: none;
+            text-align: center;
+            letter-spacing: 1px;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #ff4e8e 100%);
+            color: #fff0fa;
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 6px 24px rgba(255, 78, 142, 0.18);
+        }
     </style>
 </head>
 
@@ -217,7 +240,7 @@
             <img src="./img/b-17.jpg" alt="img..." style=" transform: rotate(-90deg);">
         </div>
 
-        <a href="index.html">Back to Home</a>
+    <a href="index.html" class="back-btn">Back to Home</a>
     </div>
     <script>
         // Music auto-play on page load if coming from NEXT button
