@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🎂Happy birthday🎂</title>
   <link rel="icon" href="happy.svg" type="image/x-icon">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&family=Great+Vibes&family=Lobster+Two:wght@400;700&family=Birthstone&display=swap"
-        rel="stylesheet">
     <style>
         :root {
             --pink1: #ff69b4;
@@ -21,17 +18,7 @@
             margin: 0;
             font-family: 'Lobster Two', cursive;
             overflow-x: hidden;
-            /* animated gradient */
-            background: linear-gradient(120deg,
-                    #ff9a9e 0%,
-                    /* pink */
-                    #fad0c4 25%,
-                    /* light peach */
-                    #ffc3a0 50%,
-                    /* peach */
-                    #ff9a9e 75%
-                    /* back to pink */
-                );
+            background: linear-gradient(120deg, #ff9a9e 0%, #fad0c4 25%, #ffc3a0 50%, #ff9a9e 75%);
             background-size: 800% 800%;
             animation: bgGradient 30s ease infinite;
         }
@@ -178,6 +165,9 @@
         .heart {
             width: 40px;
             animation: heartbeat 1.2s infinite;
+            color: #ff3366 !important; /* red-pink, force */
+            /* Try to force emoji color for all browsers */
+            filter: none !important;
         }
 
         @keyframes rise {
@@ -223,6 +213,8 @@
             animation: rise 6s linear infinite;
             pointer-events: none;
             z-index: 0;
+            color: #ff3366 !important; /* red-pink, force */
+            filter: none !important;
         }
 
         .confetti {
@@ -386,6 +378,8 @@
             pointer-events: none;
             animation: floatUp 5s linear infinite;
             z-index: 0;
+            color: #ff3366 !important; /* red-pink, force */
+            filter: none !important;
         }
 
         @keyframes floatUp {
@@ -401,37 +395,9 @@
         }
 
         /* 3. Starfield layer via pseudo-element */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                radial-gradient(white 1px, transparent 1px) 0 0,
-                radial-gradient(white 1px, transparent 1px) 10px 10px;
-            background-size: 20px 20px;
-            animation: drift 60s linear infinite;
-            pointer-events: none;
-            z-index: 0;
-        }
+    /* Removed duplicate body::before and drift keyframes for clarity */
 
-        @keyframes drift {
-            to {
-                transform: translate(-500px, 500px);
-            }
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Lobster Two', cursive;
-            overflow-x: hidden;
-            /* animated gradient */
-            background: linear-gradient(120deg, #ff9a9e, #fad0c4, #ffc3a0, #ff9a9e);
-            background-size: 800% 800%;
-            animation: bgGradient 30s ease infinite;
-        }
+    /* Removed duplicate body selector for clarity */
 
         /* gradient keyframes */
         @keyframes bgGradient {
@@ -559,6 +525,8 @@
             animation: flyUp 1s ease-out forwards;
             z-index: 9999;
             opacity: 0.8;
+            color: #ff3366 !important; /* red-pink, force */
+            filter: none !important;
         }
 
         .heart-effect::before {
@@ -860,6 +828,7 @@
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.animationDuration = Math.random() * 3 + 4 + 's';
             heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+            heart.style.color = '#ff3366'; // red-pink
             document.getElementById('hearts-container').appendChild(heart);
             setTimeout(() => heart.remove(), 6000);
         }
@@ -885,6 +854,7 @@
             clickEffect.style.position = 'fixed';
             clickEffect.style.left = e.clientX + 'px';
             clickEffect.style.top = e.clientY + 'px';
+            clickEffect.style.color = '#ff3366'; // red-pink
             document.body.appendChild(clickEffect);
             setTimeout(() => clickEffect.remove(), 1000);
         });
@@ -956,6 +926,7 @@
             h.textContent = '💖';
             h.style.left = Math.random() * 100 + 'vw';
             h.style.fontSize = (Math.random() * 30 + 20) + 'px';
+            h.style.color = '#ff3366'; // red-pink
             document.getElementById('heart-container').appendChild(h);
             setTimeout(() => h.remove(), 5000);
         }
@@ -973,6 +944,7 @@
                     el.textContent = '❤️';
                     el.style.fontSize = '24px';
                     el.style.animationDuration = '3s';
+                    el.style.color = '#ff3366'; // red-pink
                 }
                 el.style.left = e.clientX + 'px';
                 el.style.top = e.clientY + 'px';
@@ -1002,7 +974,7 @@
             heart.className = "heart-effect";
             heart.style.left = e.pageX + "px";
             heart.style.top = e.pageY + "px";
-            heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+            heart.style.color = '#ff3366'; // red-pink
             document.body.appendChild(heart);
 
             setTimeout(() => {
